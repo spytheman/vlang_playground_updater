@@ -1,0 +1,15 @@
+#!/usr/bin/bash
+
+cd /home/admin
+
+echo
+echo "Starting update..."
+date
+
+make status 
+make all
+make status
+
+date
+echo "Ending update."
+echo
