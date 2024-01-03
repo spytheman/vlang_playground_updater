@@ -1,8 +1,8 @@
 # For more information see the manual pages of crontab(5) and cron(8)
-# m h  dom mon dow   command
 
 PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
 HOME=/home/admin
 SHELL=/usr/bin/bash
 
-43 18  *  *  * /home/admin/updater/update_from_repos 2>&1 >> /home/admin/updater/update.log
+# m    h    dom   mon   dow   command
+  46   *    *     *     *     /home/admin/updater/update_from_repos 2>&1 >> /home/admin/updater/update.log
