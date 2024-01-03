@@ -6,7 +6,7 @@ update_v:
 	date; cd ~/v/ && git pull && make && v -prod -cc gcc -o vprod cmd/v && mv vprod v && v -prod -cc gcc cmd/tools/vfmt.v && v -prod -cc gcc cmd/tools/vdoctor.v && v -prod -cc gcc cmd/tools/vtest.v
 
 update_playground:
-	date; cd ~/playground && git pull && v -keepc -g server/
+	date; cd ~/playground && git pull && v -cc gcc -g -keepc -skip-unused server/
 
 restart_playground:
 	date; cd ~/playground && sudo service playground restart
