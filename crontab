@@ -5,4 +5,4 @@ HOME=/home/admin
 SHELL=/usr/bin/bash
 
 # m    h    dom   mon   dow   command
-  46   *    *     *     *     /home/admin/updater/update_from_repos 2>&1 >> /home/admin/updater/update.log
+  25   *    *     *     *     nice /home/admin/updater/update_from_repos 2>&1 >> /home/admin/updater/update.log

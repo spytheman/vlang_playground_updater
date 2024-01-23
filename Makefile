@@ -1,12 +1,12 @@
-all: update_v update_playground restart_playground restart_nginx
+all:    update_v update_playground restart_playground restart_nginx
 
-.PHONY: update_v update_playground restart_playground restart_nginx status
+.PHONY: update_v update_playground restart_playground restart_nginx status install_crontab
 
 update_v: 
-	date; cd ~/v/ && git pull && make && v -prod -cc gcc -o vprod cmd/v && mv vprod v && v -prod -cc gcc cmd/tools/vfmt.v && v -prod -cc gcc cmd/tools/vdoctor.v && v -prod -cc gcc cmd/tools/vtest.v
+	date; cd ~/v/ && git pull && nice make && v cmd/tools/vfmt.v && v cmd/tools/vdoctor.v && v cmd/tools/vtest.v
 
 update_playground:
-	date; cd ~/playground && git pull && v -cc gcc -g -keepc -skip-unused server/
+	date; cd ~/playground && git pull && v -g -keepc -skip-unused -d trace_request_url server/
 
 restart_playground:
 	date; cd ~/playground && sudo service playground restart
